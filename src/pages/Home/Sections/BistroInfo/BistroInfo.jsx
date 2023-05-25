@@ -3,7 +3,7 @@ import bistroImg from "../../../../assets/home/chef-service.jpg";
 const BistroInfo = () => {
   return (
     <div
-      className="hero h-96 opacity-90 text-center flex items-center my-20 bg-auto"
+      className="hero h-96 opacity-90 text-center flex items-center my-20 bg-auto max-w-4xl mx-auto"
       style={{
         backgroundImage: `url("${bistroImg}")`,
       }}
