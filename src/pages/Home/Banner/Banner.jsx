@@ -10,7 +10,7 @@ import img6 from "../../../assets/home/06.png";
 
 const Banner = () => {
   return (
-    <Carousel className="flex flex-col items-center justify-center">
+    <Carousel autoPlay infiniteLoop interval={3000} className="text-center">
       <div>
         <img loading="lazy" src={img1} alt="banner_img" />
       </div>
