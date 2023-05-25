@@ -23,27 +23,33 @@ const OrderSwiper = () => {
     >
       <SwiperSlide>
         <img className="h-72 " loading="lazy" src={salad} alt="salad" />
+        <p className="text-xl font-semibold text-white -mt-12 text-center uppercase">
+          Salad
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className="h-72 " loading="lazy" src={soup} alt="soup" />
+        <p className="text-xl font-semibold text-white -mt-12 text-center uppercase">
+          Soup
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className="h-72 " loading="lazy" src={pizza} alt="pizza" />
+        <p className="text-xl font-semibold text-white -mt-12 text-center">
+          pizza
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className="h-72 " loading="lazy" src={dessert} alt="dessert" />
+        <p className="text-xl font-semibold text-white -mt-12 text-center">
+          dessert
+        </p>
       </SwiperSlide>
       <SwiperSlide>
         <img className="h-72 " loading="lazy" src={salad} alt="salad" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="h-72 " loading="lazy" src={pizza} alt="pizza" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="h-72 " loading="lazy" src={dessert} alt="dessert" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="h-72 " loading="lazy" src={salad} alt="salad" />
+        <p className="text-xl font-semibold text-white -mt-12 text-center">
+          Salad
+        </p>
       </SwiperSlide>
     </Swiper>
   );
