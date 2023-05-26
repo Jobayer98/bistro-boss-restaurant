@@ -3,7 +3,7 @@ import Background from "../../../../components/BackgroundImg/Background";
 
 const BistroInfo = () => {
   return (
-    <Background img={bistroImg}>
+    <Background img={bistroImg} className={" h-96 max-w-4xl mx-auto"}>
       <div className="bg-base-100 p-16  w-[80%] lg:w-[70%] mx-auto">
         <h1 className="text-3xl font-normal uppercase mb-4">Bistro boss</h1>
         <p className="font-['Inter']">
