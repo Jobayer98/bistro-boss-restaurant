@@ -1,13 +1,9 @@
 import bistroImg from "../../../../assets/home/chef-service.jpg";
+import Background from "../../../../components/BackgroundImg/Background";
 
 const BistroInfo = () => {
   return (
-    <div
-      className="hero h-96 opacity-90 text-center flex items-center my-20 bg-auto max-w-4xl mx-auto"
-      style={{
-        backgroundImage: `url("${bistroImg}")`,
-      }}
-    >
+    <Background img={bistroImg}>
       <div className="bg-base-100 p-16  w-[80%] lg:w-[70%] mx-auto">
         <h1 className="text-3xl font-normal uppercase mb-4">Bistro boss</h1>
         <p className="font-['Inter']">
@@ -17,7 +13,7 @@ const BistroInfo = () => {
           nihil iusto ducimus incidunt quibusdam nemo.
         </p>
       </div>
-    </div>
+    </Background>
   );
 };
 

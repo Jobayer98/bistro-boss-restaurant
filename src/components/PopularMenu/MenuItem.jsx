@@ -7,6 +7,7 @@ const MenuItem = ({ item }) => {
           className="h-16 w-20 lg:h-[100px] lg:w-[120px] rounded-b-full rounded-tr-full"
           src={image}
           alt="menuImg"
+          loading="lazy"
         />
       </figure>
       <div className="lg:basis-[320px]">
@@ -14,7 +15,7 @@ const MenuItem = ({ item }) => {
         <p className="font-['Inter'] text-sm text-gray-500">{recipe}</p>
       </div>
       <span>
-        <p className="text-orange-500">${price}</p>
+        <p className="text-[#BB8506]">${price}</p>
       </span>
     </div>
   );

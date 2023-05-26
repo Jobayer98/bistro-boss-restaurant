@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import MenuItem from "../../../../components/PopularMenu/MenuItem";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useFetch from "../../../../hooks/useFetch";
+import Button from "../../../../components/UI/Button/Button";
 
 const PopularMenu = () => {
   const { data } = useFetch();
@@ -16,9 +17,9 @@ const PopularMenu = () => {
       </div>
       <div className="text-center mt-12">
         <Link to="/menu">
-          <button className="btn btn-outline uppercase border-2 border-l-0 border-r-0 border-t-0">
+          <Button className="btn btn-outline uppercase border-2 border-l-0 border-r-0 border-t-0">
             view full menu
-          </button>
+          </Button>
         </Link>
       </div>
     </section>
