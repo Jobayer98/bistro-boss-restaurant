@@ -4,7 +4,7 @@ const Item = ({ item }) => {
     <div className="flex gap-6">
       <figure>
         <img
-          className="h-16 w-20 lg:h-[100px] lg:w-[120px] rounded-b-full rounded-tr-full"
+          className="h-16 w-24 lg:h-[100px] lg:w-[150px] rounded-b-full rounded-tr-full"
           src={image}
           alt="menuImg"
           loading="lazy"
