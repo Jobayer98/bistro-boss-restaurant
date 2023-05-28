@@ -1,4 +1,5 @@
 import MenuBanner from "./BannerSection/MenuBanner";
+import Dessert from "./DessertSection/Dessert";
 import Offer from "./OfferSection.jsx/Offer";
 
 const Menu = () => {
@@ -6,6 +7,7 @@ const Menu = () => {
     <div className="max-w-screen-lg mx-auto">
       <MenuBanner />
       <Offer />
+      <Dessert />
     </div>
   );
 };

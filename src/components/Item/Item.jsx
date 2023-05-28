@@ -15,7 +15,7 @@ const Item = ({ item }) => {
         <p className="font-['Inter'] text-sm text-gray-500">{recipe}</p>
       </div>
       <span>
-        <p className="text-[#d99904]">${price}</p>
+        <p className="text-[#d99904] text-lg">${price}</p>
       </span>
     </div>
   );
