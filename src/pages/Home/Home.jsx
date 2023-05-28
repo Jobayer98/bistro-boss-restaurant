@@ -11,13 +11,15 @@ const HomePage = () => {
   return (
     <>
       <Banner />
-      <Order />
-      <BistroInfo />
-      <PopularMenu />
-      <Contact />
-      <Chef />
-      <MenuInfo />
-      <Testimonial />
+      <div className="max-w-screen-lg mx-auto">
+        <Order />
+        <BistroInfo />
+        <PopularMenu />
+        <Contact />
+        <Chef />
+        <MenuInfo />
+        <Testimonial />
+      </div>
     </>
   );
 };

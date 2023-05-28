@@ -21,7 +21,7 @@ const Testimonial = () => {
   const { data: reviews } = useFetch("../../../../../public/reviews.json");
 
   return (
-    <section className="max-w-4xl mx-auto mt-16 mb-20">
+    <section className="mt-24">
       <SectionTitle
         heading={"Testimonials"}
         subHeading={"What Our Clients Say"}

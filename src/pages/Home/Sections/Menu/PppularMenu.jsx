@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MenuItem from "../../../../components/PopularMenu/MenuItem";
+import Item from "../../../../components/Item/Item";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import useFetch from "../../../../hooks/useFetch";
 import Button from "../../../../components/UI/Button/Button";
@@ -8,11 +8,11 @@ const PopularMenu = () => {
   const { data } = useFetch("../../../../../public/menu.json");
   const popularItems = data.filter((item) => item.category === "popular");
   return (
-    <section className="mb-16 max-w-4xl mx-auto">
+    <section className="mt-24">
       <SectionTitle heading="from our menu" subHeading="Check it out" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-center items-center">
-        {popularItems.map((item) => (
-          <MenuItem key={item._id} item={item} />
+        {popularItems.map((item, index) => (
+          <Item key={index} item={item} />
         ))}
       </div>
       <div className="text-center mt-12">

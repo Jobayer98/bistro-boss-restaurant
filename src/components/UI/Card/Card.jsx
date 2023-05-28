@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 const Card = ({ item }) => {
   const { name, recipe, image } = item;
   return (
-    <div className="card  bg-[#f3f3f3] shadow rounded-none font-['Inter'] mx-auto">
+    <div className="card bg-[#f3f3f3] shadow rounded-none font-['Inter'] mx-auto">
       <figure className="">
         <img
           src={image}

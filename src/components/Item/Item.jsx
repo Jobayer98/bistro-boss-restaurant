@@ -1,4 +1,4 @@
-const MenuItem = ({ item }) => {
+const Item = ({ item }) => {
   const { name, recipe, image, price } = item;
   return (
     <div className="flex gap-6">
@@ -15,10 +15,10 @@ const MenuItem = ({ item }) => {
         <p className="font-['Inter'] text-sm text-gray-500">{recipe}</p>
       </div>
       <span>
-        <p className="text-[#BB8506]">${price}</p>
+        <p className="text-[#d99904]">${price}</p>
       </span>
     </div>
   );
 };
 
-export default MenuItem;
+export default Item;

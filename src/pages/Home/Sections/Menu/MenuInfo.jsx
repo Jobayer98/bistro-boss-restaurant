@@ -1,11 +1,11 @@
-import Background from "../../../../components/BackgroundImg/Background";
+import Banner from "../../../../components/Banner/Banner";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import Button from "../../../../components/UI/Button/Button";
 import featureImg from "../../../../assets/home/featured.jpg";
 
 const MenuInfo = () => {
   return (
-    <Background img={featureImg} className="h-[650px]">
+    <Banner img={featureImg} className="h-[650px] my-24">
       <div className="bg-black bg-opacity-80 h-full flex flex-col items-center justify-center gap-3">
         <SectionTitle
           className={"text-white"}
@@ -40,7 +40,7 @@ const MenuInfo = () => {
           </div>
         </div>
       </div>
-    </Background>
+    </Banner>
   );
 };
 

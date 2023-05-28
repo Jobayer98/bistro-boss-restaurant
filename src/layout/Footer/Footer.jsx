@@ -3,7 +3,7 @@ import FooterRight from "./FooterRight";
 
 const Footer = () => {
   return (
-    <footer className="flex">
+    <footer className="flex mt-24">
       <FooterLeft />
       <FooterRight />
     </footer>
