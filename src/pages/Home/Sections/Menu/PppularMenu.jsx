@@ -5,7 +5,7 @@ import useFetch from "../../../../hooks/useFetch";
 import Button from "../../../../components/UI/Button/Button";
 
 const PopularMenu = () => {
-  const { data } = useFetch();
+  const { data } = useFetch("../../../../../public/menu.json");
   const popularItems = data.filter((item) => item.category === "popular");
   return (
     <section className="mb-16 max-w-4xl mx-auto">

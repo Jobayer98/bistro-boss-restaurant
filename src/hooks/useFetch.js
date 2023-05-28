@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
+const useFetch = (url) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("../../public/menu.json")
+    fetch(url)
       .then((res) => res.json())
       .then((result) => setData(result));
-  }, []);
+  }, [url]);
 
   return { data };
 };
