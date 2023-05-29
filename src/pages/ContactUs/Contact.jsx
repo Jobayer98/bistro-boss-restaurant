@@ -1,4 +1,5 @@
 import BannerContact from "./BannerSection/BannerContact";
+import ContactForm from "./ContactForm/ContactForm";
 import OurLocation from "./Location/OurLocation";
 
 const ContactUs = () => {
@@ -6,6 +7,7 @@ const ContactUs = () => {
     <>
       <BannerContact />
       <OurLocation />
+      <ContactForm />
     </>
   );
 };
