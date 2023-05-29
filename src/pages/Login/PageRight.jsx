@@ -1,3 +1,4 @@
+import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 const PageRight = () => {
   return (
     <div className="font-['Inter'] w-1/2">
@@ -43,6 +44,24 @@ const PageRight = () => {
           Sign In
         </button>
       </form>
+      <div className="text-center mt-4">
+        <p className="text-[#cea86c]">
+          New here?
+          <span className="font-medium"> Create a New Account</span>
+          <span className="my-2 block text-[#444444]">Or sign in with</span>
+        </p>
+        <div className="flex justify-center gap-10">
+          <button className="btn border-[1.5px] border-black rounded-full p-2">
+            <FaFacebookF className="text-xl" />
+          </button>
+          <button className="btn border-[1.5px] border-black rounded-full p-2">
+            <FaGoogle className="text-xl" />
+          </button>
+          <button className="btn border-[1.5px] border-black rounded-full p-2">
+            <FaGithub className="text-xl" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
