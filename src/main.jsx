@@ -7,6 +7,7 @@ import "./index.css";
 import Root from "./layout/Root";
 import HomePage from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
+import OurShop from "./pages/OurShop/OurShop";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "menu",
         element: <Menu />,
+      },
+      {
+        path: "shop",
+        element: <OurShop />,
       },
     ],
   },
