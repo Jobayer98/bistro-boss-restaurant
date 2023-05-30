@@ -1,31 +1,14 @@
 const User = () => {
   return (
-    <div className="dropdown dropdown-end">
+    <div className="ml-5">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <div className="w-10 ">
           <img
-            src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            loading="lazy"
+            className="rounded-full"
+            src="https://static.vecteezy.com/system/resources/thumbnails/015/409/989/small/elegant-man-in-business-suit-with-badge-man-business-avatar-profile-picture-illustration-isolated-vector.jpg"
           />
         </div>
       </label>
-      <ul
-        tabIndex={0}
-        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li>
-          <a>Settings</a>
-        </li>
-        <li>
-          <a>Logout</a>
-        </li>
-      </ul>
     </div>
   );
 };
