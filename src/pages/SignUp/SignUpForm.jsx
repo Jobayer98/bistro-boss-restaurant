@@ -35,7 +35,7 @@ const SignUpForm = () => {
   };
   return (
     <div className="font-['Inter'] w-full lg:w-1/2">
-      <h1 className="text-center my-4 text-2xl font-semibold">Sign Up</h1>
+      <h1 className="text-center mb-3 text-2xl font-semibold">Sign Up</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 w-[80%] lg:w-[70%] mx-auto"

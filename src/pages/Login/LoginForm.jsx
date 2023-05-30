@@ -1,36 +1,87 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Swal from "sweetalert2";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  validateCaptcha,
+} from "react-simple-captcha";
+
 const LoginForm = () => {
-  const { login } = useContext(AuthContext);
+  const { login, loginWithgoogle } = useContext(AuthContext);
   const { handleSubmit, register, reset } = useForm();
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    login(data.email, data.password)
+    if (validateCaptcha(data.cpatcha) == true) {
+      login(data.email, data.password)
+        .then((result) => {
+          if (result.user.email) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "You have successfully registered",
+              showConfirmButton: false,
+              timer: 1000,
+            });
+            reset();
+            navigate("/");
+          }
+        })
+        .catch(() => {
+          Swal.fire({
+            position: "top",
+            icon: "error",
+            title: "Failed to login",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        });
+    } else {
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Failed to login",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
+  const handleGoogleLogin = () => {
+    loginWithgoogle()
       .then((result) => {
         if (result.user.email) {
           Swal.fire({
-            position: "top-end",
+            position: "top",
             icon: "success",
-            title: "You have successfully registered",
+            title: "You have successfully Login",
             showConfirmButton: false,
             timer: 1000,
           });
           navigate("/");
         }
       })
-      .catch((e) => {
-        console.log(e);
+      .catch(() => {
+        Swal.fire({
+          position: "top",
+          icon: "error",
+          title: "Failed to login",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
-    reset();
   };
+
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
   return (
     <div className="font-['Inter'] w-full lg:w-1/2">
-      <h1 className="text-center my-4 text-2xl font-semibold">Login</h1>
+      <h1 className="text-center mb-2 text-2xl font-semibold">Login</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 w-[80%] lg:w-[70%] mx-auto"
@@ -56,19 +107,14 @@ const LoginForm = () => {
           />
         </label>
         <label>
-          <input
-            type="text"
-            placeholder="U A g f u o"
-            readOnly
-            className="p-3 w-full rounded-md text-sm font-thin outline-gray-200"
-          />
-          <span className="text-blue-600 text-sm">Reload Captcha</span>
+          <LoadCanvasTemplate />
         </label>
         <label htmlFor="captcha">
           <input
             type="text"
             placeholder="Type here"
             className="p-3 w-full rounded-md text-sm font-thin outline-gray-200"
+            {...register("cpatcha", { required: true })}
           />
         </label>
         <button
@@ -91,7 +137,10 @@ const LoginForm = () => {
           <button className="btn border-[1.5px] border-black rounded-full p-2">
             <FaFacebookF className="text-xl" />
           </button>
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn border-[1.5px] border-black rounded-full p-2"
+          >
             <FaGoogle className="text-xl" />
           </button>
           <button className="btn border-[1.5px] border-black rounded-full p-2">

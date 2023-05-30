@@ -7,7 +7,7 @@ const SignUp = () => {
   return (
     <AuthBanner>
       <div
-        className="shadow-3xl w-4/5 mx-auto border-l-2 border-t-2 rounded-sm flex flex-col-reverse lg:flex-row justify-between items-center py-12"
+        className="shadow-3xl w-4/5 mx-auto border-l-2 border-t-2 rounded-sm flex flex-col-reverse lg:flex-row justify-between items-center py-6"
         style={{
           backgroundImage: `url("${bgImg}")`,
         }}
