@@ -1,9 +1,9 @@
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import Swal from "sweetalert2";
+import OAuth from "../../components/OAuth/OAuth";
 
 const SignUpForm = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -88,17 +88,7 @@ const SignUpForm = () => {
           </Link>
           <span className="my-2 block text-[#444444]">Or sign in with</span>
         </p>
-        <div className="flex justify-center gap-10 mt-3">
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
-            <FaFacebookF className="text-xl" />
-          </button>
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
-            <FaGoogle className="text-xl" />
-          </button>
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
-            <FaGithub className="text-xl" />
-          </button>
-        </div>
+        <OAuth />
       </div>
     </div>
   );

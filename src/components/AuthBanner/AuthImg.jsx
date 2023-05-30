@@ -4,7 +4,7 @@ const AuthImg = () => {
   return (
     <div className="w-full lg:w-1/2">
       <figure>
-        <img src={loginImg} alt="loginImg" loading="lazy" />
+        <img className="mx-auto" src={loginImg} alt="loginImg" loading="lazy" />
       </figure>
     </div>
   );

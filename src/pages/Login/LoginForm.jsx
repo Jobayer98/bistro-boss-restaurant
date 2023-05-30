@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Swal from "sweetalert2";
@@ -9,14 +9,14 @@ import {
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
+import OAuth from "../../components/OAuth/OAuth";
 
 const LoginForm = () => {
-  const { login, loginWithgoogle } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const { handleSubmit, register, reset } = useForm();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  console.log(location);
 
   const onSubmit = (data) => {
     if (validateCaptcha(data.cpatcha) == true) {
@@ -31,7 +31,7 @@ const LoginForm = () => {
               timer: 1000,
             });
             reset();
-            navigate("/");
+            navigate(from, { replace: true });
           }
         })
         .catch(() => {
@@ -52,31 +52,6 @@ const LoginForm = () => {
         timer: 1500,
       });
     }
-  };
-
-  const handleGoogleLogin = () => {
-    loginWithgoogle()
-      .then((result) => {
-        if (result.user.email) {
-          Swal.fire({
-            position: "top",
-            icon: "success",
-            title: "You have successfully Login",
-            showConfirmButton: false,
-            timer: 1000,
-          });
-          navigate(from, { replace: true });
-        }
-      })
-      .catch(() => {
-        Swal.fire({
-          position: "top",
-          icon: "error",
-          title: "Failed to login",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      });
   };
 
   useEffect(() => {
@@ -136,21 +111,8 @@ const LoginForm = () => {
           </Link>
           <span className="my-2 block text-[#444444]">Or sign in with</span>
         </p>
-        <div className="flex justify-center gap-10 mt-3">
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
-            <FaFacebookF className="text-xl" />
-          </button>
-          <button
-            onClick={handleGoogleLogin}
-            className="btn border-[1.5px] border-black rounded-full p-2"
-          >
-            <FaGoogle className="text-xl" />
-          </button>
-          <button className="btn border-[1.5px] border-black rounded-full p-2">
-            <FaGithub className="text-xl" />
-          </button>
-        </div>
       </div>
+      <OAuth />
     </div>
   );
 };

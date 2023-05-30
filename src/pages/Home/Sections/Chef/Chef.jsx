@@ -9,7 +9,7 @@ const Chef = () => {
   return (
     <section className="mt-24">
       <SectionTitle heading="chef recommends" subHeading={"Should Try"} />
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-12">
         {offeredItems.map((item, index) => (
           <Card key={index} item={item} />
         ))}
