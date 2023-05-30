@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs/Contact";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import AuthProvider from "./context/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <OurShop />,
+        element: (
+          <PrivateRoute>
+            <OurShop />
+          </PrivateRoute>
+        ),
       },
       {
         path: "contact",

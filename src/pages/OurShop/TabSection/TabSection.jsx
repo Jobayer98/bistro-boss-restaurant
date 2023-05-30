@@ -10,7 +10,7 @@ const TabSection = () => {
   return (
     <section className="max-w-screen-md mx-auto">
       <Tabs className="text-center mt-8 font-['Inter'] cursor-pointer">
-        <TabList className="tabs uppercase justify-center ">
+        <TabList className="tabs uppercase flex justify-center gap-6">
           <Tab className="tab tab-bordered text-[#BB8506] font-medium">
             Salad
           </Tab>

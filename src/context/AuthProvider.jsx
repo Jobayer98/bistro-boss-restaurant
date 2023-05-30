@@ -12,15 +12,19 @@ import { useEffect, useState } from "react";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loader, setLoader] = useState(false);
   const createUser = (email, password) => {
+    setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = (email, password) => {
+    setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const loginWithgoogle = () => {
+    setLoader(true);
     const porvider = new GoogleAuthProvider();
     return signInWithPopup(auth, porvider);
   };
@@ -33,6 +37,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loader,
     createUser,
     login,
     loginWithgoogle,
@@ -42,6 +47,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setUser(false);
     });
 
     return () => {

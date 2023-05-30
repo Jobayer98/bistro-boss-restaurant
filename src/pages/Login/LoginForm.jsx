@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Swal from "sweetalert2";
 import {
@@ -14,6 +14,9 @@ const LoginForm = () => {
   const { login, loginWithgoogle } = useContext(AuthContext);
   const { handleSubmit, register, reset } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log(location);
 
   const onSubmit = (data) => {
     if (validateCaptcha(data.cpatcha) == true) {
@@ -62,7 +65,7 @@ const LoginForm = () => {
             showConfirmButton: false,
             timer: 1000,
           });
-          navigate("/");
+          navigate(from, { replace: true });
         }
       })
       .catch(() => {
