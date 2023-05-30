@@ -12,11 +12,11 @@ const Card = ({ item }) => {
           loading="lazy"
         />
       </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title text-lg font-semibold">{name}</h2>
-        <p className="text-xs">{recipe}</p>
+      <div className="flex flex-col items-center text-center px-2">
+        <h2 className="card-title text-lg font-semibold mt-3">{name}</h2>
+        <p className="text-xs mt-2 flex-1">{recipe}</p>
         <div className="card-actions">
-          <Button className="btn uppercase text-[#BB8506] bg-[#e8e8e8] border-[#BB8506] border-2 border-l-0 border-r-0 border-t-0 mt-4">
+          <Button className="font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-full hover:text-white hover:bg-[#BB8506] transition duration-500 ease-in-out my-4">
             Add to Card
           </Button>
         </div>

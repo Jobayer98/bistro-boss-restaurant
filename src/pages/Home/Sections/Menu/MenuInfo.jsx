@@ -32,7 +32,7 @@ const MenuInfo = () => {
             </p>
             <Button
               className={
-                "btn text-white bg-transparent border-white border-2 border-t-0 border-l-0 border-r-0 mt-8 ml-3 uppercase tracking-widest"
+                "font-['Inter'] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-gray-400 mt-6 text-center rounded-full  hover:bg-gray-300 hover:text-black transition duration-500 ease-in-out"
               }
             >
               Read more
