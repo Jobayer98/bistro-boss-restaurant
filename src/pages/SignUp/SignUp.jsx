@@ -1,9 +1,9 @@
 import bgImg from "../../assets/others/authentication.png";
 import AuthBanner from "../../components/AuthBanner/AuthBanner";
 import AuthImg from "../../components/AuthBanner/AuthImg";
-import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <AuthBanner>
       <div
@@ -12,11 +12,11 @@ const Login = () => {
           backgroundImage: `url("${bgImg}")`,
         }}
       >
+        <SignUpForm />
         <AuthImg />
-        <LoginForm />
       </div>
     </AuthBanner>
   );
 };
 
-export default Login;
+export default SignUp;

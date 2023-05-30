@@ -1,5 +1,6 @@
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
-const PageRight = () => {
+import { Link } from "react-router-dom";
+const LoginForm = () => {
   return (
     <div className="font-['Inter'] w-1/2">
       <h1 className="text-center my-4 text-2xl font-semibold">Login</h1>
@@ -47,10 +48,13 @@ const PageRight = () => {
       <div className="text-center mt-4">
         <p className="text-[#cea86c]">
           New here?
-          <span className="font-medium"> Create a New Account</span>
+          <Link to="/signup" className="font-medium text-[#D1A054]">
+            {" "}
+            Create a New Account
+          </Link>
           <span className="my-2 block text-[#444444]">Or sign in with</span>
         </p>
-        <div className="flex justify-center gap-10">
+        <div className="flex justify-center gap-10 mt-3">
           <button className="btn border-[1.5px] border-black rounded-full p-2">
             <FaFacebookF className="text-xl" />
           </button>
@@ -66,4 +70,4 @@ const PageRight = () => {
   );
 };
 
-export default PageRight;
+export default LoginForm;

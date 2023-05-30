@@ -1,6 +1,6 @@
 import loginImg from "../../assets/others/authentication2.png";
 
-const PageLeft = () => {
+const AuthImg = () => {
   return (
     <div className="w-1/2">
       <figure>
@@ -10,4 +10,4 @@ const PageLeft = () => {
   );
 };
 
-export default PageLeft;
+export default AuthImg;

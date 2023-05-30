@@ -10,6 +10,7 @@ import Menu from "./pages/Menu/Menu";
 import OurShop from "./pages/OurShop/OurShop";
 import ContactUs from "./pages/ContactUs/Contact";
 import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "signup",
+    element: <SignUp />,
   },
 ]);
 
