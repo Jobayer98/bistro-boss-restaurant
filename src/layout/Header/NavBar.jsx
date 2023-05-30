@@ -5,7 +5,7 @@ import Links from "./NavBar/Links";
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-opacity-60 bg-black text-white md:px-12 fixed z-10 max-w-screen-xl">
+    <div className="navbar bg-opacity-60 bg-black text-white md:px-12 fixed z-10">
       <div className="flex-1">
         <Link to="/" className="uppercase text-2xl font-extrabold">
           Bistro Boss <br />

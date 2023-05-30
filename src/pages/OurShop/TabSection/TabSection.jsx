@@ -9,7 +9,7 @@ import Drinks from "./DrinkItem/Drinks";
 const TabSection = () => {
   return (
     <section className="max-w-screen-md mx-auto">
-      <Tabs className="text-center mt-8 font-['Inter']">
+      <Tabs className="text-center mt-8 font-['Inter'] cursor-pointer">
         <TabList className="tabs uppercase justify-center ">
           <Tab className="tab tab-bordered text-[#BB8506] font-medium">
             Salad
