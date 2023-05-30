@@ -1,16 +1,48 @@
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import Swal from "sweetalert2";
 const LoginForm = () => {
+  const { login } = useContext(AuthContext);
+  const { handleSubmit, register, reset } = useForm();
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    login(data.email, data.password)
+      .then((result) => {
+        if (result.user.email) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "You have successfully registered",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+          navigate("/");
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    reset();
+  };
   return (
-    <div className="font-['Inter'] w-1/2">
+    <div className="font-['Inter'] w-full lg:w-1/2">
       <h1 className="text-center my-4 text-2xl font-semibold">Login</h1>
-      <form className="flex flex-col gap-4 w-[70%] mx-auto">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-4 w-[80%] lg:w-[70%] mx-auto"
+      >
         <label htmlFor="email" className="font-medium">
           Email <br />
           <input
             type="email"
+            required
             placeholder="Enter your email"
             className="mt-2 p-3 w-full rounded-md text-sm font-thin outline-gray-200"
+            {...register("email", { required: true })}
           />
         </label>
 
@@ -20,6 +52,7 @@ const LoginForm = () => {
             type="password"
             placeholder="Enter your password"
             className="mt-2 p-3 w-full rounded-md text-sm font-thin outline-gray-200"
+            {...register("password", { required: true })}
           />
         </label>
         <label>

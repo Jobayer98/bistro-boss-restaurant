@@ -11,6 +11,7 @@ import OurShop from "./pages/OurShop/OurShop";
 import ContactUs from "./pages/ContactUs/Contact";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import AuthProvider from "./context/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div className="max-w-screen-xl mx-auto">
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </div>
   </React.StrictMode>
 );
