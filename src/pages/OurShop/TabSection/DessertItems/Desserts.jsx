@@ -5,8 +5,8 @@ const Desserts = () => {
   const { data: desserts = [] } = useFetch("http://localhost:3000/soups");
   return (
     <div className="grid grid-cols-3 gap-6">
-      {desserts.map((dessert, index) => (
-        <Card key={index} item={dessert} />
+      {desserts.map((dessert) => (
+        <Card key={dessert._id} item={dessert} />
       ))}
     </div>
   );

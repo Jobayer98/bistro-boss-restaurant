@@ -16,7 +16,7 @@ const Card = ({ item }) => {
         <div className="card-actions">
           <button
             onClick={() => {
-              console.log(name);
+              console.log(item?._id);
             }}
             className="btn btn-outline font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-md hover:text-[#BB8506] hover:btn my-4"
           >
