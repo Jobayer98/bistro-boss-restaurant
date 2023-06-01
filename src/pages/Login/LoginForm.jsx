@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import {
   loadCaptchaEnginge,

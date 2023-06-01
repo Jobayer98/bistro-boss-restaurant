@@ -3,7 +3,7 @@ import Links from "./NavBar/Links";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { useContext } from "react";
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext/AuthContext";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const NavBar = () => {

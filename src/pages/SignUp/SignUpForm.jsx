@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import OAuth from "../../components/OAuth/OAuth";
 

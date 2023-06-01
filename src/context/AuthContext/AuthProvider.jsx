@@ -1,5 +1,5 @@
 import AuthContext from "./AuthContext";
-import auth from "../firebase/firebase.config";
+import auth from "../../firebase/firebase.config";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
