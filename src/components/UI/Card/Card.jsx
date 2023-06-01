@@ -1,5 +1,3 @@
-import Button from "../Button/Button";
-
 const Card = ({ item }) => {
   const { name, recipe, image } = item;
   return (
@@ -16,9 +14,14 @@ const Card = ({ item }) => {
         <h2 className="card-title text-lg font-semibold mt-3">{name}</h2>
         <p className="">{recipe}</p>
         <div className="card-actions">
-          <Button className="btn btn-outline font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-md hover:text-[#BB8506] hover:btn my-4">
+          <button
+            onClick={() => {
+              console.log(name);
+            }}
+            className="btn btn-outline font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-md hover:text-[#BB8506] hover:btn my-4"
+          >
             Add to Card
-          </Button>
+          </button>
         </div>
       </div>
     </div>
