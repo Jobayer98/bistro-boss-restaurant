@@ -4,8 +4,8 @@ import CartContext from "./CartContext";
 const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
-  const addItem = (item) => {
-    setItems((preItem) => [...preItem, item]);
+  const addItem = (id) => {
+    setItems((preItem) => [...preItem, id]);
   };
 
   const removeItem = (id) => {

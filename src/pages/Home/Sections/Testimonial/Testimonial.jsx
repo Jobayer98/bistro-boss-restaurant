@@ -18,7 +18,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const Testimonial = () => {
-  const { data: reviews } = useFetch("../../../../../public/reviews.json");
+  const { data: reviews } = useFetch("http://localhost:3000/reviews");
 
   return (
     <section className="mt-24">

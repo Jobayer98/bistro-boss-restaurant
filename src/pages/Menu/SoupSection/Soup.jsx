@@ -5,7 +5,7 @@ import Button from "../../../components/UI/Button/Button";
 import useFetch from "../../../hooks/useFetch";
 
 const Soup = () => {
-  const { data } = useFetch("../../../../public/menu.json");
+  const { data } = useFetch("http://localhost:3000/soups");
   const soups = data.filter((item) => item.category === "soup");
   soups.length = 6;
   return (

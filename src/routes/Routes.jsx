@@ -8,7 +8,6 @@ import ContactUs from "../pages/ContactUs/Contact";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Cart from "../pages/Cart/Cart";
-import CartProvider from "../context/CartContext/CartProvider";
 
 const router = createBrowserRouter([
   {
@@ -39,9 +38,7 @@ const router = createBrowserRouter([
         path: "cart",
         element: (
           <PrivateRoute>
-            <CartProvider>
-              <Cart />
-            </CartProvider>
+            <Cart />
           </PrivateRoute>
         ),
       },

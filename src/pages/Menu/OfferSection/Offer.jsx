@@ -4,8 +4,7 @@ import Button from "../../../components/UI/Button/Button";
 import useFetch from "../../../hooks/useFetch";
 
 const Offer = () => {
-  const { data } = useFetch("../../../../public/menu.json");
-  const offered = data.filter((item) => item.category === "offered");
+  const { data: offered } = useFetch("http://localhost:3000/offered");
 
   return (
     <section className="mt-16 flex flex-col items-center">

@@ -5,8 +5,7 @@ import Button from "../../../components/UI/Button/Button";
 import useFetch from "../../../hooks/useFetch";
 
 const Salad = () => {
-  const { data } = useFetch("../../../../public/menu.json");
-  const salads = data.filter((item) => item.category === "salad");
+  const { data: salads } = useFetch("http://localhost:3000/salad");
   salads.length = 6;
   return (
     <section className="mt-16">

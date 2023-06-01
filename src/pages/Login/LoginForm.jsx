@@ -24,7 +24,7 @@ const LoginForm = () => {
         .then((result) => {
           if (result.user.email) {
             Swal.fire({
-              position: "top-end",
+              position: "top",
               icon: "success",
               title: "You have successfully registered",
               showConfirmButton: false,

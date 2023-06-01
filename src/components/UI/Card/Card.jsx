@@ -1,5 +1,37 @@
+import axios from "axios";
+import Swal from "sweetalert2";
+
 const Card = ({ item }) => {
   const { name, recipe, image } = item;
+
+  const handleClick = (item) => {
+    const addToCart = async () => {
+      const res = await axios.post("http://localhost:3000/add-to-cart", {
+        item,
+      });
+
+      if (res.status === 201) {
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: `${res.data.message}`,
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      } else {
+        Swal.fire({
+          position: "top",
+          icon: "error",
+          title: `${res.data.message}`,
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
+    };
+
+    addToCart();
+  };
+
   return (
     <div className="card bg-[#f3f3f3] shadow rounded-none font-['Inter'] mx-auto">
       <figure className="">
@@ -16,7 +48,7 @@ const Card = ({ item }) => {
         <div className="card-actions">
           <button
             onClick={() => {
-              console.log(item?._id);
+              handleClick(item);
             }}
             className="btn btn-outline font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-md hover:text-[#BB8506] hover:btn my-4"
           >
