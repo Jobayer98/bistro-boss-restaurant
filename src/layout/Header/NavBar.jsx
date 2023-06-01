@@ -28,7 +28,9 @@ const NavBar = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
-              <HiOutlineShoppingCart className="text-2xl" />
+              <Link to="/cart">
+                <HiOutlineShoppingCart className="text-2xl" />
+              </Link>
               <span className="indicator-item badge badge-secondary">8</span>
             </div>
           </label>
