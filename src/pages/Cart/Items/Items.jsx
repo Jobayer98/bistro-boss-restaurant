@@ -1,6 +1,6 @@
-const Items = () => {
+const Items = ({ orders }) => {
   return (
-    <div className="overflow-x-auto flex justify-center">
+    <div className="overflow-x-auto flex justify-center font-['Inter']">
       <table className="table">
         <thead>
           <tr>
@@ -20,26 +20,20 @@ const Items = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
-          </tr>
+          {orders.map((order) => {
+            <tr key={order._id}>
+              <th>1</th>
+              <td>
+                <img src={order.image} alt={order.name} />
+              </td>
 
-          <tr>
-            <th>2</th>
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
-          </tr>
-
-          <tr>
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-          </tr>
+              <td>Name: {order.name}</td>
+              <td>Price: {order.price}</td>
+              <td>
+                <button className="btn">delete</button>
+              </td>
+            </tr>;
+          })}
         </tbody>
       </table>
     </div>

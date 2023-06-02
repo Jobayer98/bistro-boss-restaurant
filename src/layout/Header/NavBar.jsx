@@ -5,11 +5,11 @@ import auth from "../../firebase/firebase.config";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import CartContext from "../../context/CartContext/CartContext";
+import useCart from "../../hooks/useCart";
 
 const NavBar = () => {
   const { user } = useContext(AuthContext);
-  const { items } = useContext(CartContext);
+  const [cart] = useCart();
   const navigate = useNavigate();
   const handleLogOut = () => {
     signOut(auth);
@@ -34,7 +34,7 @@ const NavBar = () => {
                 <HiOutlineShoppingCart className="text-2xl" />
               </Link>
               <span className="indicator-item badge badge-secondary">
-                {items.length}
+                {cart.length}
               </span>
             </div>
           </label>

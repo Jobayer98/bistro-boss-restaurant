@@ -1,31 +1,30 @@
 import axios from "axios";
-import Swal from "sweetalert2";
+import { useContext } from "react";
+import AuthContext from "../../../context/AuthContext/AuthContext";
+import { useNavigate } from "react-router-dom";
+import useCart from "../../../hooks/useCart";
 
 const Card = ({ item }) => {
-  const { name, recipe, image } = item;
+  const { name, recipe, image, price, _id } = item;
+  const { user } = useContext(AuthContext);
+  const [, refetch] = useCart();
+  const navigate = useNavigate();
 
-  const handleClick = (item) => {
+  const handleClick = () => {
+    const itemDetails = {
+      menuId: _id,
+      name,
+      price,
+      recipe,
+      image,
+      email: user?.email,
+    };
     const addToCart = async () => {
-      const res = await axios.post("http://localhost:3000/add-to-cart", {
-        item,
-      });
-
-      if (res.status === 201) {
-        Swal.fire({
-          position: "top",
-          icon: "success",
-          title: `${res.data.message}`,
-          showConfirmButton: false,
-          timer: 1000,
-        });
+      if (user && user?.email) {
+        await axios.post("http://localhost:3000/add-to-cart", itemDetails);
+        refetch();
       } else {
-        Swal.fire({
-          position: "top",
-          icon: "error",
-          title: `${res.data.message}`,
-          showConfirmButton: false,
-          timer: 1000,
-        });
+        navigate("/login");
       }
     };
 
@@ -48,7 +47,7 @@ const Card = ({ item }) => {
         <div className="card-actions">
           <button
             onClick={() => {
-              handleClick(item);
+              handleClick();
             }}
             className="btn btn-outline font-['Inter'] text-[#BB8506] uppercase font-medium border-b-[3px] px-4 pb-2 pt-3 border-[#BB8506] rounded-md hover:text-[#BB8506] hover:btn my-4"
           >

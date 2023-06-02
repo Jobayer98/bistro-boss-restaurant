@@ -6,15 +6,17 @@ import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import AuthProvider from "./context/AuthContext/AuthProvider";
 import router from "./routes/Routes";
-import CartProvider from "./context/CartContext/CartProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div className="max-w-screen-xl mx-auto">
       <AuthProvider>
-        <CartProvider>
+        <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
-        </CartProvider>
+        </QueryClientProvider>
       </AuthProvider>
     </div>
   </React.StrictMode>
