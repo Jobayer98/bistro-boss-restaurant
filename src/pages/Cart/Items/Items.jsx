@@ -1,10 +1,11 @@
+import { BsTrash3Fill } from "react-icons/bs";
 const Items = ({ orders }) => {
   return (
     <div className="overflow-x-auto flex justify-center font-['Inter']">
       <table className="table">
         <thead>
           <tr>
-            <th className="bg-[#d1a054] text-white uppercase font-['Inter']"></th>
+            {/* <th className="bg-[#d1a054] text-white uppercase font-['Inter']"></th> */}
             <th className="bg-[#d1a054] text-white uppercase font-['Inter']">
               Item Image
             </th>
@@ -20,20 +21,24 @@ const Items = ({ orders }) => {
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => {
-            <tr key={order._id}>
-              <th>1</th>
+          {orders.map((item) => (
+            <tr key={item._id}>
               <td>
-                <img src={order.image} alt={order.name} />
+                <div className="avatar">
+                  <div className="w-8 rounded">
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                </div>
               </td>
-
-              <td>Name: {order.name}</td>
-              <td>Price: {order.price}</td>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
               <td>
-                <button className="btn">delete</button>
+                <button className="btn btn-xs">
+                  <BsTrash3Fill />
+                </button>
               </td>
-            </tr>;
-          })}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

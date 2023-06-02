@@ -16,7 +16,7 @@ const Cart = () => {
           subHeading="My Cart"
         ></SectionTitle>
         <div className="mt-12 pt-12 px-6 bg-white">
-          <div className=" flex justify-between mb-6">
+          <div className=" flex justify-between mb-6 mx-16">
             <h1 className="text-xl uppercase font-semibold">
               Total orders: {cart?.length || 0}
             </h1>
